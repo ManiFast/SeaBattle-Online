@@ -1,12 +1,15 @@
-    ///////////////
-	//		Server   //
+  ///////////////
+ //	  Server  //
 ///////////////
 
 #include <iostream>
 #include <WinSock2.h>
+
+#include <Windows.h>
+#include <ctime>
+
 #include <vector>
 #include <string>
-#include <Windows.h>
 
 using std::cout;
 using std::endl;
@@ -19,10 +22,25 @@ using namespace std;
 // Count of clients
 SOCKET Connections[2];
 
+void sendIt(char msg[])
+{
+	send(Connections[0], msg, sizeof(msg), NULL);
+	send(Connections[1], msg, sizeof(msg), NULL);
+}
+
+void recvIt(char msg[])
+{
+	recv(Connections[0], msg, sizeof(msg), NULL);
+	recv(Connections[1], msg, sizeof(msg), NULL);
+}
+
 //!=========================================================
 
 int main()
 {
+	SetConsoleTitle(L"Host - unready");
+
+	srand(time(NULL));
 	cout << "Starting..." << endl;
 
 	WSADATA wsaData;
@@ -49,13 +67,17 @@ int main()
 	SOCKET newConnection;
 	int countUsers = 0;
 
-	newConnection = accept(sListen, (SOCKADDR*)&addr, &sizeofaddr);
-
-	if (newConnection == 0)
-		cout << "Error connection !" << endl;
-	else
+	// Catch two users
+	for (int i = 0; i < 2; ++i)
 	{
-		Connections[0] = newConnection;	countUsers++;
+		newConnection = accept(sListen, (SOCKADDR*)&addr, &sizeofaddr);
+
+		if (newConnection == 0)
+			cout << "Error connection !" << endl;
+		else
+		{
+			Connections[i] = newConnection;	countUsers++;
+		}
 	}
 
 	cout << "OK" << endl;
@@ -68,7 +90,46 @@ int main()
 	recv(Connections[1], name2, sizeof(name2), NULL);		//##1
 	cout << "User " << name2 << " connected !" << endl << endl;
 
+	SetConsoleTitle(L"Host - ready");
+	char isItReady[1]{ '0' };
 
+	// First
+	int num01 = rand() % 2;
+	char whoStartFirst[1];
+
+	char firstUser[10];
+	for (int i = 0; i < 10; ++i)
+	{
+		if (name1[i] == '\0')
+		{
+			firstUser[i] = '\0';
+			break;
+		}
+		else
+			firstUser[i] = name1[i];
+	}
+	//cout << name1 << " " << firstUser << endl;
+
+	sendIt(firstUser);		//#1
+
+	if (num01 == 0)
+	{
+		whoStartFirst[0] = '0';
+		sendIt(whoStartFirst);		//#2
+		cout << whoStartFirst[0] << endl;
+
+		char cordXY[2];
+		recvIt(cordXY);		//##2
+	}
+	else if (num01 == 1)
+	{
+		whoStartFirst[0] = '1';
+		sendIt(whoStartFirst);		//#1
+		cout << whoStartFirst[0] << endl;
+
+
+	}
+	else cout << "Error !" << endl;
 
 
 	cout << endl << endl; system("pause"); return 0;

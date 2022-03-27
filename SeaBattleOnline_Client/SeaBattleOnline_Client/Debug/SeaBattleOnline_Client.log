@@ -1,2 +1,8 @@
 ﻿  SeaBattleOnline_Client.cpp
+H:\Disk\qwerty\C++\My projects\SeaBattleOnline_Client\SeaBattleOnline_Client\SeaBattleOnline_Client.cpp(461,22): warning C4018: '<': signed/unsigned mismatch
+H:\Disk\qwerty\C++\My projects\SeaBattleOnline_Client\SeaBattleOnline_Client\SeaBattleOnline_Client.cpp(496,21): warning C4018: '<': signed/unsigned mismatch
+H:\Disk\qwerty\C++\My projects\SeaBattleOnline_Client\SeaBattleOnline_Client\SeaBattleOnline_Client.cpp(410,7): warning C4102: 'start': unreferenced label
+H:\Disk\qwerty\C++\My projects\SeaBattleOnline_Client\SeaBattleOnline_Client\SeaBattleOnline_Client.cpp(685,9): warning C4102: 'start2': unreferenced label
+H:\Disk\qwerty\C++\My projects\SeaBattleOnline_Client\SeaBattleOnline_Client\SeaBattleOnline_Client.cpp(252): warning C4715: 'SetShipsCordinates': not all control paths return a value
+H:\Disk\qwerty\C++\My projects\SeaBattleOnline_Client\SeaBattleOnline_Client\SeaBattleOnline_Client.cpp(327): warning C4715: 'SetAllShipsCordinates': not all control paths return a value
   SeaBattleOnline_Client.vcxproj -> H:\Disk\qwerty\C++\My projects\SeaBattleOnline_Client\Debug\SeaBattleOnline_Client.exe

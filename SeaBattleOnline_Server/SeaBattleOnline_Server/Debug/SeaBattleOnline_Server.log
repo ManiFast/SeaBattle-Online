@@ -1,2 +1,3 @@
 ﻿  SeaBattleOnline_Server.cpp
+H:\Disk\qwerty\C++\My projects\SeaBattleOnline_Server\SeaBattleOnline_Server\SeaBattleOnline_Server.cpp(43,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   SeaBattleOnline_Server.vcxproj -> H:\Disk\qwerty\C++\My projects\SeaBattleOnline_Server\Debug\SeaBattleOnline_Server.exe
