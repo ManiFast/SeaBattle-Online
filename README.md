@@ -1,4 +1,4 @@
-# SeaBattle-Online         
+# SeaBattle-Online          
 Online sea battle in console with graphical interface
 
 ### Under development...
