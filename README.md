@@ -19,3 +19,12 @@ v2
 
 v1
 ![](https://github.com/Stas-inside/SeaBattle-Online/blob/main/Photoes/photo_2022-03-18_16-10-36.jpg)
+
+---
+
+Plan
+
+![](https://github.com/ManiFast/SeaBattle-Online/blob/main/Screenshot%202022-03-30%20182840.png)
+
+
+![](https://github.com/ManiFast/SeaBattle-Online/blob/main/Screenshot%202022-03-30%20182908.png)
